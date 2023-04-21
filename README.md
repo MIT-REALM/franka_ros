@@ -1,3 +1,5 @@
+**NOTE: this is a template repository. Do not clone it; instead, click "Use this template" on GitHub**
+
 # Dockerized Franka ROS interface
 
 This repository allows you to run [`libfranka`](https://frankaemika.github.io/docs/libfranks.html) and [`franka_ros`](https://frankaemika.github.io/docs/franka_ros.html) in a Docker environment (complete with ROS Noetic, GUI access, and networking to the robot with the `FCI_IP` environment variable).
