@@ -11,7 +11,9 @@ docker compose build
 
 To run
 ```bash
-docker compose run franka
+docker compose up
+# Open a new terminal window and run:
+docker attach franka_ros-main-1
 ```
 
 Now you should have access to the full Franka ROS interface documented [`here`](https://frankaemika.github.io/docs/franka_ros.html).
