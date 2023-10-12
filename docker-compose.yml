@@ -10,20 +10,20 @@ services:
     tty: true        # docker run -t
     command: roscore
 
-  cartesian_impedance_control:
-    image: franka_ros:latest
-    build: .docker
-    environment:
-      - DISPLAY=${DISPLAY}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-    network_mode: host
-    privileged: true
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
-    depends_on:
-      - roscore
-    command: /bin/bash -c '. /catkin_ws/devel/setup.bash && roslaunch --wait franka_example_controllers cartesian_impedance_example_controller_no_marker.launch robot:=fr3 robot_ip:=172.16.0.2 load_gripper:=True'
+  # cartesian_impedance_control:
+  #   image: franka_ros:latest
+  #   build: .docker
+  #   environment:
+  #     - DISPLAY=${DISPLAY}
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix
+  #   network_mode: host
+  #   privileged: true
+  #   stdin_open: true # docker run -i
+  #   tty: true        # docker run -t
+  #   depends_on:
+  #     - roscore
+  #   command: /bin/bash -c '. /catkin_ws/devel/setup.bash && roslaunch --wait franka_example_controllers cartesian_impedance_example_controller_no_marker.launch robot:=fr3 robot_ip:=172.16.0.2 load_gripper:=True'
 
   main:
     image: franka_ros:latest
@@ -39,5 +39,5 @@ services:
     tty: true        # docker run -t
     depends_on:
       - roscore
-      - cartesian_impedance_control
+      # - cartesian_impedance_control
     command: bash

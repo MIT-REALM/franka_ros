@@ -13,8 +13,9 @@ To run
 ```bash
 docker compose up
 # Open a new terminal window and run:
-docker attach franka_ros-main-1
+docker attach <your-repo-name>-main-1
 ```
+where `<your-repo-name>` is the name that you choose for the new repository (i.e., the repository that uses this template).
 
 Now you should have access to the full Franka ROS interface documented [`here`](https://frankaemika.github.io/docs/franka_ros.html).
 
@@ -23,7 +24,7 @@ For example, you can test the connection to the robot as follows:
 1. Go to the [Desk webapp](https://172.16.0.2/desk/) and login.
 2. Unlock the robot using the sidebar on the right of the screen.
 3. Open the drop-down in the top right by clicking on the IP address, then click "Activate FCI" to enable the Franka Control Interface.
-4. Run the docker container using `docker compose run franka`
+4. Run the docker container using `docker compose run main`
 5. Run the command `roslaunch franka_example_controllers joint_impedance_example_controller.launch   robot_ip:=$FCI_IP load_gripper:=true robot:=fr3`
 
 The robot should move in a circle, and an RViz window should open showing a matching 3D model of the robot.
